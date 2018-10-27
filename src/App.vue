@@ -1,17 +1,25 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <DenHeader/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+/* eslint-disable */
+import { mapGetters } from 'vuex'
+import DenHeader from './components/Den-Header'
+import DenHome from './components/Dragon-Den'
+import DenShop from './components/Dragon-Shop'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    DenHeader,
+    DenShop,
+    DenHome
+  },
+  computed: {
+    ...mapGetters(['getGameId', 'getGameData']),
   }
 }
 </script>
