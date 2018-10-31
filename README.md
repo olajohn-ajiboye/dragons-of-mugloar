@@ -5,6 +5,9 @@
 ## Build Setup
 
 ``` bash
+# cd into directory
+  cd dragons-of-mugu
+
 # install dependencies
 npm install
 

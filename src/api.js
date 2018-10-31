@@ -1,13 +1,8 @@
 import axios from 'axios'
-// import { EventBus } from './event'
 
 const api = axios.create({
   baseURL: `https://www.dragonsofmugloar.com/api/v2`,
-  withCredentials: false,
-  headers: {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json'
-  }
+  withCredentials: false
 })
 
 export default {

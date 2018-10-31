@@ -1,22 +1,41 @@
 <template>
   <div id="app">
     <DenHeader/>
+     <div >
+      <div class="row">
+       <div class="col-xs-12 col-sm-8 col-md-8 messages">
+        <DragonHome/>
+       </div>
+       <div class="col-xs-6 col-md-4 shop">
+       <DragonShop/>
+    </div>
   </div>
+ </div>
+</div>
 </template>
 
 <script>
 /* eslint-disable */
 import { mapGetters } from 'vuex'
 import DenHeader from './components/Den-Header'
-import DenHome from './components/Dragon-Den'
-import DenShop from './components/Dragon-Shop'
+import DragonHome from './components/Dragon-Home'
+import DragonShop from './components/Dragon-Shop'
 
 export default {
   name: 'App',
   components: {
     DenHeader,
-    DenShop,
-    DenHome
+    DragonShop,
+    DragonHome
+  },
+  watch: {
+    //resets game when lives becomes 0
+    'getGameData.lives' (lives) {
+      if (lives == 0) {
+        alert('Game over');
+        this.$store.dispatch('RESET_GAME');
+      }
+    }
   },
   computed: {
     ...mapGetters(['getGameId', 'getGameData']),
@@ -33,4 +52,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>

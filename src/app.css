@@ -1,6 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Spicy+Rice');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro|Spicy+Rice');
 body {
-    background-color: #d7ccc8 ;
+    background-color: #e0e0e0 ;
     margin: 0;
     padding: 0;
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
 }
+
+/* disabled icon on mousehover not working by default in bootsrap 4.1.0, this style handles that work around */
+button:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+  }
+.btn:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+  }
